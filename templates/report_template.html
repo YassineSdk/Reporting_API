@@ -3,14 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>ONCF • Rapport de Suivi de Recommandation</title>
+<title>ONCF • Rapport de Suivi des Recommandations et actions</title>
 <!-- Fonts: Source Serif 4 & DM Sans -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<!-- Chart.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js">
-</script>
 <style>
 
 :root {
@@ -218,6 +215,7 @@ body {
 .kpi-label {
     font-size: 10px;
     color: var(--muted);
+    font-weight: 600;
     line-height: 1.35;
     min-height: 32px;
     margin-bottom: 4px;
@@ -272,6 +270,50 @@ body {
 
 .chart-container {
     position: relative;
+    width: 100%;
+}
+
+.chart-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.chart-axis-label {
+    fill: #333333;
+    font-family: 'DM Sans', 'Trebuchet MS', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.chart-value-label {
+    fill: #333333;
+    font-family: 'DM Sans', 'Trebuchet MS', sans-serif;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.pie-legend {
+    display: grid;
+    gap: 4px;
+    margin-top: 8px;
+    font-size: 8.5px;
+    line-height: 1.2;
+}
+
+.pie-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #333333;
+    font-weight: 600;
+}
+
+.pie-swatch {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
 }
 
 .body-text {
@@ -311,6 +353,7 @@ body {
 .ks-label {
     font-size: 9.5px;
     color: var(--muted);
+    font-weight: 600;
     line-height: 1.3;
     margin-bottom: 2px;
     min-height: 30px;
@@ -375,9 +418,27 @@ body {
 </head>
 <body>
 
-<!-- Data bridge for Chart.js (Jinja2 will replace values inside data attributes) -->
-<div id="chart-data" data-s1-critique="{{ chart_s1_critique | default('10') }}" data-s1-modere="{{ chart_s1_modere | default('5') }}" data-s1-mineur="{{ chart_s1_mineur | default('12') }}" data-s2-non-echues="{{ chart_s2_non_echues | default('10') }}" data-s2-en-cours="{{ chart_s2_en_cours | default('14') }}" data-s2-cloture="{{ chart_s2_cloture | default('6') }}" data-s2-en-retard="{{ chart_s2_en_retard | default('8') }}" data-s2-reechelonne="{{ chart_s2_reechelonne | default('10') }}" data-pie-critique="{{ chart_pie_critique | default('37') }}" data-pie-modere="{{ chart_pie_modere | default('18.5') }}" data-pie-mineur="{{ chart_pie_mineur | default('44.4') }}" style="display:none;">
-</div>
+{% set s1_critique = chart_s1_critique | default(10) | float %}
+{% set s1_modere = chart_s1_modere | default(5) | float %}
+{% set s1_mineur = chart_s1_mineur | default(12) | float %}
+{% set s1_max = [s1_critique, s1_modere, s1_mineur] | max %}
+{% set s1_scale = 205 / (s1_max if s1_max > 0 else 1) %}
+{% set s2_non_echues = chart_s2_non_echues | default(10) | float %}
+{% set s2_en_cours = chart_s2_en_cours | default(14) | float %}
+{% set s2_cloture = chart_s2_cloture | default(6) | float %}
+{% set s2_en_retard = chart_s2_en_retard | default(8) | float %}
+{% set s2_reechelonne = chart_s2_reechelonne | default(10) | float %}
+{% set s2_max = [s2_non_echues, s2_en_cours, s2_cloture, s2_en_retard, s2_reechelonne] | max %}
+{% set s2_scale = 140 / (s2_max if s2_max > 0 else 1) %}
+{% set pie_critique = chart_pie_critique | default(37) | float %}
+{% set pie_modere = chart_pie_modere | default(18.5) | float %}
+{% set pie_mineur = chart_pie_mineur | default(44.4) | float %}
+{% set pie_total_raw = pie_critique + pie_modere + pie_mineur %}
+{% set pie_total = pie_total_raw if pie_total_raw > 0 else 1 %}
+{% set pie_critique_pct = pie_critique / pie_total * 100 %}
+{% set pie_modere_pct = pie_modere / pie_total * 100 %}
+{% set pie_mineur_pct = pie_mineur / pie_total * 100 %}
+{% set pie_circ = 100.53 %}
 
 <div class="page">
 
@@ -430,7 +491,7 @@ body {
         <div class="kpi-value">{{ recommendations_under_study | default('15') }}</div>
     </div>
     <div class="kpi-cell">
-        <div class="kpi-label">Taux d'acceptation de recommandation</div>
+        <div class="kpi-label">Taux d'acceptation de recommandations</div>
         <div class="kpi-value">{{ acceptance_rate | default('70') }}%</div>
     </div>
     </div>
@@ -440,7 +501,19 @@ body {
     <div>
         <div class="chart-block-title">Répartition du nombre de recommandations acceptées par criticité</div>
         <div class="chart-container" style="height: 130px;">
-        <canvas id="chart-s1-bar"></canvas>
+        <svg class="chart-svg" viewBox="0 0 320 120" role="img" aria-label="Répartition des recommandations acceptées par criticité">
+            <text class="chart-axis-label" x="0" y="25">critique</text>
+            <rect x="62" y="13" width="{{ (s1_critique * s1_scale) | round(2) }}" height="18" fill="#D32F2F"></rect>
+            <text class="chart-value-label" x="{{ 68 + (s1_critique * s1_scale) | round(2) }}" y="26">{{ s1_critique | round(1) | int }}</text>
+
+            <text class="chart-axis-label" x="0" y="60">moderé</text>
+            <rect x="62" y="48" width="{{ (s1_modere * s1_scale) | round(2) }}" height="18" fill="#388E3C"></rect>
+            <text class="chart-value-label" x="{{ 68 + (s1_modere * s1_scale) | round(2) }}" y="61">{{ s1_modere | round(1) | int }}</text>
+
+            <text class="chart-axis-label" x="0" y="95">mineur</text>
+            <rect x="62" y="83" width="{{ (s1_mineur * s1_scale) | round(2) }}" height="18" fill="#7B1FA2"></rect>
+            <text class="chart-value-label" x="{{ 68 + (s1_mineur * s1_scale) | round(2) }}" y="96">{{ s1_mineur | round(1) | int }}</text>
+        </svg>
         </div>
     </div>
     <div class="body-text">
@@ -466,28 +539,61 @@ body {
         <div class="ks-value">{{ total_actions | default('50') }}</div>
         </div>
         <div class="kpi-stack-cell">
-        <div class="ks-label">Taux de mise en œuvre des actions</div>
+        <div class="ks-label">Taux de mise en œuvre d'actions</div>
         <div class="ks-value">{{ actions_implementation_rate | default('42') }}%</div>
         </div>
         <div class="kpi-stack-cell">
-        <div class="ks-label">Taux de mise en œuvre des actions critiques</div>
+        <div class="ks-label">Taux de mise en œuvre d'actions critiques</div>
         <div class="ks-value">{{ critical_actions_implementation_rate | default('36') }}%</div>
         </div>
     </div>
 
     <!-- Middle bar chart -->
     <div>
-        <div class="chart-block-title">Répartition du nombre de actions par status avancement</div>
+        <div class="chart-block-title">Répartition du nombre d'actions par status avancement</div>
         <div class="chart-container" style="height: 185px;">
-        <canvas id="chart-s2-bar"></canvas>
+        <svg class="chart-svg" viewBox="0 0 260 170" role="img" aria-label="Répartition des actions par statut d'avancement">
+            <text class="chart-axis-label" x="0" y="24">non échues</text>
+            <rect x="74" y="12" width="{{ (s2_non_echues * s2_scale) | round(2) }}" height="18" fill="#1565C0"></rect>
+            <text class="chart-value-label" x="{{ 80 + (s2_non_echues * s2_scale) | round(2) }}" y="25">{{ s2_non_echues | round(1) | int }}</text>
+
+            <text class="chart-axis-label" x="0" y="56">en cours</text>
+            <rect x="74" y="44" width="{{ (s2_en_cours * s2_scale) | round(2) }}" height="18" fill="#7B1FA2"></rect>
+            <text class="chart-value-label" x="{{ 80 + (s2_en_cours * s2_scale) | round(2) }}" y="57">{{ s2_en_cours | round(1) | int }}</text>
+
+            <text class="chart-axis-label" x="0" y="88">Cloturé</text>
+            <rect x="74" y="76" width="{{ (s2_cloture * s2_scale) | round(2) }}" height="18" fill="#388E3C"></rect>
+            <text class="chart-value-label" x="{{ 80 + (s2_cloture * s2_scale) | round(2) }}" y="89">{{ s2_cloture | round(1) | int }}</text>
+
+            <text class="chart-axis-label" x="0" y="120">en retard</text>
+            <rect x="74" y="108" width="{{ (s2_en_retard * s2_scale) | round(2) }}" height="18" fill="#D32F2F"></rect>
+            <text class="chart-value-label" x="{{ 80 + (s2_en_retard * s2_scale) | round(2) }}" y="121">{{ s2_en_retard | round(1) | int }}</text>
+
+            <text class="chart-axis-label" x="0" y="152">rééchelonneé</text>
+            <rect x="74" y="140" width="{{ (s2_reechelonne * s2_scale) | round(2) }}" height="18" fill="#00796B"></rect>
+            <text class="chart-value-label" x="{{ 80 + (s2_reechelonne * s2_scale) | round(2) }}" y="153">{{ s2_reechelonne | round(1) | int }}</text>
+        </svg>
         </div>
     </div>
 
     <!-- Right smaller pie chart -->
     <div>
-        <div class="chart-block-title">Répartition du nombre de actions par criticité</div>
+        <div class="chart-block-title">Répartition du nombre d'actions par criticité</div>
         <div class="chart-container" style="height: 160px; width: 160px; margin: 0 auto;">
-        <canvas id="chart-s2-pie"></canvas>
+        <svg class="chart-svg" style="height: 82px;" viewBox="0 0 120 76" role="img" aria-label="Répartition des actions par criticité">
+            <circle cx="60" cy="38" r="16" fill="#FFFFFF"></circle>
+            <circle cx="60" cy="38" r="16" fill="none" stroke="#D32F2F" stroke-width="32"
+                stroke-dasharray="{{ (pie_circ * pie_critique_pct / 100) | round(2) }} {{ pie_circ | round(2) }}" transform="rotate(-90 60 38)"></circle>
+            <circle cx="60" cy="38" r="16" fill="none" stroke="#388E3C" stroke-width="32"
+                stroke-dasharray="{{ (pie_circ * pie_modere_pct / 100) | round(2) }} {{ pie_circ | round(2) }}" stroke-dashoffset="-{{ (pie_circ * pie_critique_pct / 100) | round(2) }}" transform="rotate(-90 60 38)"></circle>
+            <circle cx="60" cy="38" r="16" fill="none" stroke="#00796B" stroke-width="32"
+                stroke-dasharray="{{ (pie_circ * pie_mineur_pct / 100) | round(2) }} {{ pie_circ | round(2) }}" stroke-dashoffset="-{{ (pie_circ * (pie_critique_pct + pie_modere_pct) / 100) | round(2) }}" transform="rotate(-90 60 38)"></circle>
+        </svg>
+        <div class="pie-legend">
+            <div class="pie-legend-item"><span class="pie-swatch" style="background:#D32F2F;"></span>critique {{ pie_critique_pct | round(1) }}%</div>
+            <div class="pie-legend-item"><span class="pie-swatch" style="background:#388E3C;"></span>moderé {{ pie_modere_pct | round(1) }}%</div>
+            <div class="pie-legend-item"><span class="pie-swatch" style="background:#00796B;"></span>mineur {{ pie_mineur_pct | round(1) }}%</div>
+        </div>
         </div>
     </div>
     </div>
@@ -504,255 +610,6 @@ body {
     <div class="footer-text">{{ footer_text | default('Recommendation Rapport de Suivi de Recommendation Rapport de Suivi de Recommendation Rapport de Suivi de Recommendation .') }}</div>
 </footer>
 </div>
-
-<!-- Chart.js initialization -->
-<script>
-(function() {
-    const d = document.getElementById('chart-data').dataset;
-
-    const C = {
-    red: '#D32F2F',
-    green: '#388E3C',
-    purple: '#7B1FA2',
-    blue: '#1565C0',
-    teal: '#00796B',
-    orange: '#E8510A',
-    };
-
-    const baseFont = {
-    family: "'DM Sans', sans-serif"
-    };
-    Chart.defaults.font = { ...Chart.defaults.font,
-    ...baseFont
-    };
-
-    // ── Chart 1: Section 01 horizontal bar (Criticité) – NO GRID ──
-    new Chart(document.getElementById('chart-s1-bar'), {
-    type: 'bar',
-    data: {
-        labels: ['critique', 'moderé', 'mineur'],
-        datasets: [{
-        data: [
-            parseFloat(d.s1Critique),
-            parseFloat(d.s1Modere),
-            parseFloat(d.s1Mineur),
-        ],
-        backgroundColor: [C.red, C.green, C.purple],
-        borderWidth: 0,
-        barThickness: 18,
-        }]
-    },
-    options: {
-        indexAxis: 'y',
-        responsive: true,
-        maintainAspectRatio: false,
-        layout: {
-        padding: {
-            right: 22
-        }
-        },
-        plugins: {
-        legend: {
-            display: false
-        },
-        tooltip: {
-            callbacks: {
-            label: (c) => '  ' + c.parsed.x
-            }
-        }
-        },
-        scales: {
-        x: {
-            grid: {
-            display: false
-            },
-            border: {
-            display: false
-            },
-            ticks: {
-            font: {
-                size: 9
-            },
-            color: '#555',
-            maxTicksLimit: 6
-            },
-        },
-        y: {
-            grid: {
-            display: false
-            },
-            border: {
-            display: false
-            },
-            ticks: {
-            font: {
-                size: 9
-            },
-            color: '#333'
-            },
-        }
-        }
-    },
-    plugins: [{
-        id: 'valueLabels',
-        afterDatasetsDraw(chart) {
-        const {
-            ctx,
-            data
-        } = chart;
-        ctx.save();
-        ctx.font = 'bold 9px DM Sans';
-        ctx.fillStyle = '#333';
-        ctx.textBaseline = 'middle';
-        chart.getDatasetMeta(0).data.forEach((bar, i) => {
-            ctx.fillText(data.datasets[0].data[i], bar.x + 4, bar.y);
-        });
-        ctx.restore();
-        }
-    }]
-    });
-
-    // ── Chart 2: Section 02 horizontal bar (Statuts actions) – NO GRID ──
-    new Chart(document.getElementById('chart-s2-bar'), {
-    type: 'bar',
-    data: {
-        labels: ['non échues','en cours', 'Cloturé', 'en retard', 'rééchelonneé'],
-        datasets: [{
-        data: [
-            parseFloat(d.s2NonEchues),
-            parseFloat(d.s2EnCours),
-            parseFloat(d.s2Cloture),
-            parseFloat(d.s2EnRetard),
-            parseFloat(d.s2Reechelonne),
-        ],
-        backgroundColor: [C.blue, C.purple,C.green, C.red, C.teal],
-        borderWidth: 0,
-        barThickness: 20,
-        }]
-    },
-    options: {
-        indexAxis: 'y',
-        responsive: true,
-        maintainAspectRatio: false,
-        layout: {
-        padding: {
-            right: 24
-        }
-        },
-        plugins: {
-        legend: {
-            display: false
-        },
-        tooltip: {
-            callbacks: {
-            label: (c) => '  ' + c.parsed.x
-            }
-        }
-        },
-        scales: {
-        x: {
-            grid: {
-            display: false
-            },
-            border: {
-            display: false
-            },
-            ticks: {
-            font: {
-                size: 8.5
-            },
-            color: '#555',
-            maxTicksLimit: 5
-            },
-        },
-        y: {
-            grid: {
-            display: false
-            },
-            border: {
-            display: false
-            },
-            ticks: {
-            font: {
-                size: 8.5
-            },
-            color: '#333'
-            },
-        }
-        }
-    },
-    plugins: [{
-        id: 'valueLabels2',
-        afterDatasetsDraw(chart) {
-        const {
-            ctx,
-            data
-        } = chart;
-        ctx.save();
-        ctx.font = 'bold 8.5px DM Sans';
-        ctx.fillStyle = '#333';
-        ctx.textBaseline = 'middle';
-        chart.getDatasetMeta(0).data.forEach((bar, i) => {
-            ctx.fillText(data.datasets[0].data[i], bar.x + 4, bar.y);
-        });
-        ctx.restore();
-        }
-    }]
-    });
-
-    // ── Chart 3: Pie chart (Criticité %) – smaller size ──
-    new Chart(document.getElementById('chart-s2-pie'), {
-    type: 'pie',
-    data: {
-        labels: ['critique', 'moderé', 'mineur'],
-        datasets: [{
-        data: [
-            parseFloat(d.pieCritique),
-            parseFloat(d.pieModere),
-            parseFloat(d.pieMineur),
-        ],
-        backgroundColor: [C.red, C.green, C.teal],
-        borderColor: '#fff',
-        borderWidth: 1.5,
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: true,
-        plugins: {
-        legend: {
-            position: 'bottom',
-            labels: {
-            font: {
-                size: 8.5
-            },
-            color: '#333',
-            padding: 8,
-            boxWidth: 10,
-            boxHeight: 10,
-            generateLabels(chart) {
-                const ds = chart.data.datasets[0];
-                return chart.data.labels.map((label, i) => ({
-                text: `${label} ${ds.data[i]}%`,
-                fillStyle: ds.backgroundColor[i],
-                strokeStyle: '#fff',
-                lineWidth: 1,
-                index: i,
-                }));
-            }
-            }
-        },
-        tooltip: {
-            callbacks: {
-            label: (c) => ` ${c.label}: ${c.parsed}%`
-            }
-        }
-        }
-    }
-    });
-
-})();
-</script>
 
 </body>
 </html>
