@@ -2,9 +2,10 @@ from fastapi import HTTPException
 import pandas as pd 
 from io import StringIO
 import numpy as np
+import logging
 
 
-
+logger = logging.getLogger(__name__)
 
 def Validate_data(content)-> pd.DataFrame:
     """
@@ -22,12 +23,13 @@ def Validate_data(content)-> pd.DataFrame:
         A valid DataFrame object ready for aggregation
 
     """
-    print("Starting the data validation process")
+    logger.info("Starting the data validation process")
     # Transforming the Csv to DataFrame
 
     try : 
         data = pd.read_csv(StringIO(content.decode("utf-8")))
     except Exception :
+        logger.error("Failed to load the content file")
         raise HTTPException(
             status_code=422,
             detail="can't load the content file"
@@ -36,11 +38,12 @@ def Validate_data(content)-> pd.DataFrame:
     # Validating dataframe not empty 
     
     if data.empty :
+        logger.error("Data is empty")
         raise HTTPException(
             status_code=422,
             details="the data is empty"
         )
-    print("Validating dataframe not empty : passed")
+    logger.info("Validating dataframe not empty : passed")
     
     EXPECTED_COLS = {
         'Mission_id':str,
@@ -62,21 +65,23 @@ def Validate_data(content)-> pd.DataFrame:
     ]
 
     if missing_columns:
+        logger.error(f"Missing columns: {missing_columns}")
         raise HTTPException(
             status_code=422,
             detail = f"Missing columns {missing_columns}"
         )
-    print("checking the mandatory columns : passed")
+    logger.info("checking the mandatory columns : passed")
     
     # validating the columns type 
 
     for col in mandatory_cols:
         if not data[col].dropna().map(type).eq(str).all():
+            logger.error(f"Column {col} is expected to be a str")
             raise HTTPException(
                 status_code=422,
                 detail=f" column {col} is expected to be a str "
             )
-    print("validating the columns type : passed")
+    logger.info("validating the columns type : passed")
 
     # Validating the expected values
 
@@ -89,11 +94,12 @@ def Validate_data(content)-> pd.DataFrame:
     for col, allowed in EXPECTED_VALUES.items():
         invalid = ~data[col].isin(allowed)
         if invalid.any():
+            logger.error(f"Invalid values in {col}: {data[col][invalid].unique().tolist()}")
             raise HTTPException(
                 status_code=422,
                 detail=f"Invalid values in {col}: {data[col][invalid].unique().tolist()}"
             )
-    print("Validating the expected values : Passed")
+    logger.info("Validating the expected values : Passed")
     
     # Validating the condition that None of this values could have NA or None or np.nan
 
@@ -101,10 +107,11 @@ def Validate_data(content)-> pd.DataFrame:
 
     for col in No_NA:
         if data[col].isna().any():
+                logger.error(f"Column '{col}' cannot contain null values")
                 raise HTTPException(
                 status_code=422,
                 detail=f"Column '{col}' cannot contain null values"
                 )
-    print("Validating the None , Nan ,condition : Passed")
+    logger.info("Validating the None , Nan ,condition : Passed")
 
     return data

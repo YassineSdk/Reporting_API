@@ -2,9 +2,17 @@ from fastapi import FastAPI, Form, UploadFile, File, Response , HTTPException
 from schemas.report_model import ReportModel
 import os 
 import json 
+import logging
 from typing import Annotated
-from services.validation import Validate_data
 
+from services.validation import Validate_data
+from services.KPIs_calculation import get_KPIs
+from services.logger_setup import setup_logging
+
+# logging config
+setup_logging()
+
+logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title= "Reporting API",
@@ -60,6 +68,8 @@ async def Reporting_gen(
             status_code=400,
             detail="Only csv files are allowed"
         )
+    
+    logger.info(" the filetype is valid")
 
     # Creating the request model
     report_input = ReportModel(
@@ -69,12 +79,26 @@ async def Reporting_gen(
         footer_text=footer_text,
     )
 
+
+
     # Read Csv file 
     content = await data.read()
 
-    # Process 
-    Validate_data(content)
+    ## Process
+    # Data validation 
+    data = Validate_data(content)
+
+    # Kpis calculation 
+    print('starting the Kpi calculation')
+    recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_chart = get_KPIs(data)
+    print('Kpi calculated successfully')
+
 
     return {
-        "data" : data
+        "report_input":report_input,
+        "Recom_Kpis" : recommed_KPis,
+        "Recom_chart":RE_chart, 
+        "action_KPis":action_KPIs,
+        "Action barchart":AS_chart,
+        "Action piechart":AE_chart
     }
