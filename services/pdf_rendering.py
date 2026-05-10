@@ -42,6 +42,3 @@ def render_pdf(html_path, output_path):
         
         browser.close()
 
-
-## test
-# render_pdf("reports/preview.html","reports/report.pdf") 

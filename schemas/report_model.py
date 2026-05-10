@@ -1,4 +1,4 @@
-from pydantic import BaseModel 
+from pydantic import BaseModel ,Field
 
 
 class ReportModel(BaseModel):
@@ -7,4 +7,5 @@ class ReportModel(BaseModel):
     Action_cmt : str
     footer_text : str 
 
-
+class requestId(BaseModel):
+    request_id : str 

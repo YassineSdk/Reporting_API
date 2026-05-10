@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as numpy
 import logging
 
+
 logger = logging.getLogger(__name__)
 
 def get_KPIs(data:pd.DataFrame)-> dict:
@@ -27,7 +28,6 @@ def get_KPIs(data:pd.DataFrame)-> dict:
     RE_chart = {} # recommendation by evaluation
     AS_chart = {} # actions by status
     AE_chart = {} # actions by evaluation
-
 
     # Recommendation summary columns [Mission_id,Nb_accepté,Nb_rejeté, Nb_en etude, total_recommendation] 
     agg_dict = {
@@ -84,8 +84,6 @@ def get_KPIs(data:pd.DataFrame)-> dict:
     AE_chart = tableau_4.set_index("Evaluation")["nb_action"].to_dict()
 
 
-
-
     # Taux de mise en œuvre des actions : T2
     d = tableau_3.set_index("Action_status")["nb_action"].to_dict()
     T1 = round((d["En continue"] + d["Clôturées"]) / tableau_4.iloc[:,1].sum(), 2) * 100
@@ -102,15 +100,22 @@ def get_KPIs(data:pd.DataFrame)-> dict:
         ]['Action_id'].nunique()
 
     T2 = round(ACR / tableau_4.iloc[:,1].sum(),2) * 100
-
     
     action_KPIs['total_actions'] = tableau_3['nb_action'].sum().item()
     action_KPIs["T1"] = T1.item()
     action_KPIs["T2"] = T2.item() 
 
-    logger.info('Kpi calculated successfully')
 
-    return recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_chart
+    logger.info('Kpi calculated successfully')
+    tables = {
+            "full_data":data,
+            "recommendation_aggr":tableau_1,
+            "recomendation_status":tableau_2,
+            "actions_status":tableau_3,
+            "actions_evaluation":tableau_4
+            }
+
+    return tables, recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_chart
 
 
 

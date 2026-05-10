@@ -8,7 +8,7 @@ from datetime import date
 logger =  logging.getLogger(__name__)
 
 
-def injecting_data(report_input,recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_chart):
+def injecting_data(request_id,report_input,recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_chart):
     """
     """
 
@@ -69,11 +69,11 @@ def injecting_data(report_input,recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_
     footer_text=report_input["footer_text"]
     )
 
-    with open('reports/preview.html', 'w', encoding='utf-8') as f:
+    base_path = f"storage/{request_id}"
+    with open(f'{base_path}/preview.html', 'w', encoding='utf-8') as f:
         f.write(html_report)
     
     logger.info("Data injected successfull")
 
-    return html_report
 
 

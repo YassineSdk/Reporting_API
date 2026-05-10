@@ -1,19 +1,16 @@
-from fastapi import FastAPI, Form, UploadFile, File, Response , HTTPException 
-from schemas.report_model import ReportModel
+from fastapi import FastAPI, Query, UploadFile, File, Response , HTTPException ,Form
+import uuid
+from schemas.report_model import ReportModel,requestId
 from fastapi.responses import FileResponse
+from pathlib import Path
 import os 
 from datetime import date
 import json 
 import logging
 from typing import Annotated
 import asyncio
-
-from services.validation import Validate_data
-from services.KPIs_calculation import get_KPIs
+from pipeline import Pipeline
 from services.logger_setup import setup_logging
-from services.text_Validation import validate_text
-from services.data_injection import injecting_data
-from services.pdf_rendering import render_pdf
 
 # logging config
 setup_logging()
@@ -28,17 +25,12 @@ app = FastAPI(
                 )
 
 
-@app.get('/favicon.ico')
-async def favicon():
-    return Response(status_code=204)
-
-
 @app.get('/')
 def root():
     return {"Health checks":True}
 
 
-@app.post('/Reporting_API')
+@app.post('/report_gen')
 async def Reporting_gen(
     report_description: Annotated[
             str,
@@ -63,6 +55,9 @@ async def Reporting_gen(
         )
     ):
 
+
+    # getting request_id
+    request_id = uuid.uuid4().hex
 
     ALLOWED_TYPES = ["text/csv","application/vnd.ms-excel"]
 
@@ -90,33 +85,42 @@ async def Reporting_gen(
     # Read Csv file 
     content = await data.read()
 
+    # create folder
+    base_path = f"storage/{request_id}"
+    os.makedirs(base_path,exist_ok=True)
+
+
     ## Process
+    await Pipeline(content,report_input,request_id)
 
-    # Data validation 
-    data = Validate_data(content)
-
-    # text input validation 
-    validate_text(report_input)
-
-    # Kpis calculation 
-    recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_chart = get_KPIs(data)
-
-    #data injection 
-    injecting_data(report_input,recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_chart)
-
-    #pdf rendering
-    await asyncio.to_thread(
-        render_pdf,
-        "reports/preview.html",
-        "reports/report.pdf"
-    )
     
 
-    file_path = "reports/report.pdf"
+    file_path = f"{base_path}/report.pdf"
     file_name = f"report_{date.today()}"
 
     await asyncio.sleep(0.5)
     
+    return {
+        "request_id":request_id
+    }
+
+@app.get(f"/report/{requestId}/pdf")
+async def get_report_pdf(
+    requestId: str = Query(...,description="Request id")):
+
+
+    base_path = f"storage/{requestId}"
+    file_path = f"{base_path}/report.pdf"
+
+    if not Path(file_path).exists():
+        logger.error(f"the file does not exists in {file_path}")
+        raise HTTPException(
+            status_code=422,
+            detail=f"the file does not exists in {file_path}"
+        )
+
+    file_name = f"report_{date.today()}"
+
     return FileResponse(
         path=file_path,
         media_type="application/pdf",
@@ -125,3 +129,14 @@ async def Reporting_gen(
         "Content-Disposition": "attachment; filename=report.pdf"
     }
     )
+
+@app.get("/tables")
+async def get_tables(
+    requestId: str = Query(...,description="Request id")):
+
+
+
+    return {"requestId":requestId}
+
+
+
