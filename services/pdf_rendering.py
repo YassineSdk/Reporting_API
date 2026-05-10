@@ -1,5 +1,5 @@
 import logging 
-from playwright.async_api import async_playwright
+from playwright.sync_api import sync_playwright
 from pathlib import Path
 import os
 from fastapi import HTTPException
@@ -19,7 +19,7 @@ def render_pdf(html_path, output_path):
         )
 
 
-    with async_playwright() as p:
+    with sync_playwright() as p:
         browser = p.chromium.launch()
         
         

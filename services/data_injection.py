@@ -65,16 +65,14 @@ def injecting_data(report_input,recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_
     # text variables...
     report_description=report_input["report_description"],
     section1_text_p1=report_input["Recommendation_cmt"],
-    section1_text_p2='',
     section2_text_p1=report_input["Action_cmt"],
-    section2_text_p2='',
     footer_text=report_input["footer_text"]
     )
 
     with open('reports/preview.html', 'w', encoding='utf-8') as f:
         f.write(html_report)
     
-    logger.info("Data injection is successfull")
+    logger.info("Data injected successfull")
 
     return html_report
 

@@ -6,6 +6,7 @@ from datetime import date
 import json 
 import logging
 from typing import Annotated
+import asyncio
 
 from services.validation import Validate_data
 from services.KPIs_calculation import get_KPIs
@@ -104,12 +105,23 @@ async def Reporting_gen(
     injecting_data(report_input,recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_chart)
 
     #pdf rendering
-    render_pdf("reports/preview.html","reports/report.pdf")
+    await asyncio.to_thread(
+        render_pdf,
+        "reports/preview.html",
+        "reports/report.pdf"
+    )
+    
 
     file_path = "reports/report.pdf"
     file_name = f"report_{date.today()}"
+
+    await asyncio.sleep(0.5)
+    
     return FileResponse(
         path=file_path,
         media_type="application/pdf",
-        filename=file_name
+        filename=file_name,
+        headers={
+        "Content-Disposition": "attachment; filename=report.pdf"
+    }
     )

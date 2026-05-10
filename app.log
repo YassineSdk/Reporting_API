@@ -1743,3 +1743,623 @@
 2026-05-10 01:31:56,786 | INFO | services.KPIs_calculation | Kpi calculated successfully
 2026-05-10 01:31:56,786 | INFO | services.data_injection | Started data injection
 2026-05-10 01:31:56,808 | INFO | services.data_injection | Data injection is successfull
+2026-05-10 01:39:00,916 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:39:00,916 | DEBUG | python_multipart.multipart | Calling on_header_field with data[42:61]
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_header_value with data[63:99]
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_part_data with data[103:144]
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_header_field with data[188:207]
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_header_value with data[209:245]
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_part_data with data[249:255]
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_header_field with data[299:318]
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_header_value with data[320:348]
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:39:00,917 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_part_data with data[352:358]
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_header_field with data[402:421]
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_header_value with data[423:452]
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_part_data with data[456:462]
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_header_field with data[506:525]
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_header_value with data[527:575]
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_header_field with data[577:589]
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_header_value with data[591:599]
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_part_data with data[603:5608]
+2026-05-10 01:39:00,918 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:39:00,919 | DEBUG | python_multipart.multipart | Calling on_end with no data
+2026-05-10 01:39:00,919 | INFO | main |  the filetype is valid
+2026-05-10 01:39:00,920 | INFO | services.validation | Starting the data validation process
+2026-05-10 01:39:00,926 | INFO | services.validation | Validating dataframe not empty : passed
+2026-05-10 01:39:00,927 | INFO | services.validation | checking the mandatory columns : passed
+2026-05-10 01:39:00,931 | INFO | services.validation | validating the columns type : passed
+2026-05-10 01:39:00,931 | INFO | services.validation | Validating the expected values : Passed
+2026-05-10 01:39:00,932 | INFO | services.validation | Validating the None , Nan ,condition : Passed
+2026-05-10 01:39:00,932 | INFO | services.text_Validation | started the text validation 
+2026-05-10 01:39:00,932 | INFO | services.text_Validation | started the text validation : PASSED
+2026-05-10 01:39:00,932 | INFO | services.KPIs_calculation | starting the Kpi calculation
+2026-05-10 01:39:00,954 | INFO | services.KPIs_calculation | Kpi calculated successfully
+2026-05-10 01:39:00,954 | INFO | services.data_injection | Started data injection
+2026-05-10 01:39:00,978 | INFO | services.data_injection | Data injection is successfull
+2026-05-10 01:45:38,469 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:45:38,470 | DEBUG | python_multipart.multipart | Calling on_header_field with data[42:61]
+2026-05-10 01:45:38,470 | DEBUG | python_multipart.multipart | Calling on_header_value with data[63:99]
+2026-05-10 01:45:38,470 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:45:38,470 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:45:38,470 | DEBUG | python_multipart.multipart | Calling on_part_data with data[103:144]
+2026-05-10 01:45:38,470 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:45:38,470 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_header_field with data[188:207]
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_header_value with data[209:245]
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_part_data with data[249:255]
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_header_field with data[299:318]
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_header_value with data[320:348]
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_part_data with data[352:358]
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_header_field with data[402:421]
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_header_value with data[423:452]
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_part_data with data[456:462]
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:45:38,471 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:45:38,472 | DEBUG | python_multipart.multipart | Calling on_header_field with data[506:525]
+2026-05-10 01:45:38,472 | DEBUG | python_multipart.multipart | Calling on_header_value with data[527:575]
+2026-05-10 01:45:38,472 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:45:38,472 | DEBUG | python_multipart.multipart | Calling on_header_field with data[577:589]
+2026-05-10 01:45:38,472 | DEBUG | python_multipart.multipart | Calling on_header_value with data[591:599]
+2026-05-10 01:45:38,472 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:45:38,472 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:45:38,472 | DEBUG | python_multipart.multipart | Calling on_part_data with data[603:5608]
+2026-05-10 01:45:38,472 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:45:38,472 | DEBUG | python_multipart.multipart | Calling on_end with no data
+2026-05-10 01:45:38,473 | INFO | main |  the filetype is valid
+2026-05-10 01:45:38,473 | INFO | services.validation | Starting the data validation process
+2026-05-10 01:45:38,481 | INFO | services.validation | Validating dataframe not empty : passed
+2026-05-10 01:45:38,481 | INFO | services.validation | checking the mandatory columns : passed
+2026-05-10 01:45:38,484 | INFO | services.validation | validating the columns type : passed
+2026-05-10 01:45:38,486 | INFO | services.validation | Validating the expected values : Passed
+2026-05-10 01:45:38,486 | INFO | services.validation | Validating the None , Nan ,condition : Passed
+2026-05-10 01:45:38,486 | INFO | services.text_Validation | started the text validation 
+2026-05-10 01:45:38,486 | INFO | services.text_Validation | started the text validation : PASSED
+2026-05-10 01:45:38,486 | INFO | services.KPIs_calculation | starting the Kpi calculation
+2026-05-10 01:45:38,511 | INFO | services.KPIs_calculation | Kpi calculated successfully
+2026-05-10 01:45:38,511 | INFO | services.data_injection | Started data injection
+2026-05-10 01:45:38,534 | INFO | services.data_injection | Data injection is successfull
+2026-05-10 01:45:56,754 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:45:56,755 | DEBUG | python_multipart.multipart | Calling on_header_field with data[42:61]
+2026-05-10 01:45:56,755 | DEBUG | python_multipart.multipart | Calling on_header_value with data[63:99]
+2026-05-10 01:45:56,755 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:45:56,755 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:45:56,755 | DEBUG | python_multipart.multipart | Calling on_part_data with data[103:144]
+2026-05-10 01:45:56,755 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:45:56,755 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:45:56,755 | DEBUG | python_multipart.multipart | Calling on_header_field with data[188:207]
+2026-05-10 01:45:56,755 | DEBUG | python_multipart.multipart | Calling on_header_value with data[209:245]
+2026-05-10 01:45:56,755 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_part_data with data[249:255]
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_header_field with data[299:318]
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_header_value with data[320:348]
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_part_data with data[352:358]
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_header_field with data[402:421]
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_header_value with data[423:452]
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_part_data with data[456:462]
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:45:56,756 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:45:56,757 | DEBUG | python_multipart.multipart | Calling on_header_field with data[506:525]
+2026-05-10 01:45:56,757 | DEBUG | python_multipart.multipart | Calling on_header_value with data[527:575]
+2026-05-10 01:45:56,757 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:45:56,757 | DEBUG | python_multipart.multipart | Calling on_header_field with data[577:589]
+2026-05-10 01:45:56,757 | DEBUG | python_multipart.multipart | Calling on_header_value with data[591:599]
+2026-05-10 01:45:56,757 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:45:56,757 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:45:56,757 | DEBUG | python_multipart.multipart | Calling on_part_data with data[603:5608]
+2026-05-10 01:45:56,757 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:45:56,757 | DEBUG | python_multipart.multipart | Calling on_end with no data
+2026-05-10 01:45:56,757 | INFO | main |  the filetype is valid
+2026-05-10 01:45:56,758 | INFO | services.validation | Starting the data validation process
+2026-05-10 01:45:56,763 | INFO | services.validation | Validating dataframe not empty : passed
+2026-05-10 01:45:56,763 | INFO | services.validation | checking the mandatory columns : passed
+2026-05-10 01:45:56,768 | INFO | services.validation | validating the columns type : passed
+2026-05-10 01:45:56,769 | INFO | services.validation | Validating the expected values : Passed
+2026-05-10 01:45:56,769 | INFO | services.validation | Validating the None , Nan ,condition : Passed
+2026-05-10 01:45:56,769 | INFO | services.text_Validation | started the text validation 
+2026-05-10 01:45:56,769 | INFO | services.text_Validation | started the text validation : PASSED
+2026-05-10 01:45:56,770 | INFO | services.KPIs_calculation | starting the Kpi calculation
+2026-05-10 01:45:56,790 | INFO | services.KPIs_calculation | Kpi calculated successfully
+2026-05-10 01:45:56,790 | INFO | services.data_injection | Started data injection
+2026-05-10 01:45:56,817 | INFO | services.data_injection | Data injection is successfull
+2026-05-10 01:47:04,774 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_header_field with data[42:61]
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_header_value with data[63:99]
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_part_data with data[103:144]
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_header_field with data[188:207]
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_header_value with data[209:245]
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_part_data with data[249:255]
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:47:04,775 | DEBUG | python_multipart.multipart | Calling on_header_field with data[299:318]
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_header_value with data[320:348]
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_part_data with data[352:358]
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_header_field with data[402:421]
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_header_value with data[423:452]
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_part_data with data[456:462]
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_header_field with data[506:525]
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_header_value with data[527:575]
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_header_field with data[577:589]
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_header_value with data[591:599]
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:47:04,776 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:47:04,777 | DEBUG | python_multipart.multipart | Calling on_part_data with data[603:5608]
+2026-05-10 01:47:04,777 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:47:04,777 | DEBUG | python_multipart.multipart | Calling on_end with no data
+2026-05-10 01:47:04,777 | INFO | main |  the filetype is valid
+2026-05-10 01:47:04,778 | INFO | services.validation | Starting the data validation process
+2026-05-10 01:47:04,785 | INFO | services.validation | Validating dataframe not empty : passed
+2026-05-10 01:47:04,785 | INFO | services.validation | checking the mandatory columns : passed
+2026-05-10 01:47:04,789 | INFO | services.validation | validating the columns type : passed
+2026-05-10 01:47:04,791 | INFO | services.validation | Validating the expected values : Passed
+2026-05-10 01:47:04,791 | INFO | services.validation | Validating the None , Nan ,condition : Passed
+2026-05-10 01:47:04,791 | INFO | services.text_Validation | started the text validation 
+2026-05-10 01:47:04,791 | INFO | services.text_Validation | started the text validation : PASSED
+2026-05-10 01:47:04,791 | INFO | services.KPIs_calculation | starting the Kpi calculation
+2026-05-10 01:47:04,821 | INFO | services.KPIs_calculation | Kpi calculated successfully
+2026-05-10 01:47:04,822 | INFO | services.data_injection | Started data injection
+2026-05-10 01:47:04,864 | INFO | services.data_injection | Data injection is successfull
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_header_field with data[42:61]
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_header_value with data[63:99]
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_part_data with data[103:144]
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_header_field with data[188:207]
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_header_value with data[209:245]
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_part_data with data[249:255]
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_header_field with data[299:318]
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_header_value with data[320:348]
+2026-05-10 01:47:35,552 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_part_data with data[352:358]
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_header_field with data[402:421]
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_header_value with data[423:452]
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_part_data with data[456:462]
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_header_field with data[506:525]
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_header_value with data[527:575]
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_header_field with data[577:589]
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_header_value with data[591:599]
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_part_data with data[603:5608]
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:47:35,553 | DEBUG | python_multipart.multipart | Calling on_end with no data
+2026-05-10 01:47:35,554 | INFO | main |  the filetype is valid
+2026-05-10 01:47:35,554 | INFO | services.validation | Starting the data validation process
+2026-05-10 01:47:35,559 | INFO | services.validation | Validating dataframe not empty : passed
+2026-05-10 01:47:35,559 | INFO | services.validation | checking the mandatory columns : passed
+2026-05-10 01:47:35,561 | INFO | services.validation | validating the columns type : passed
+2026-05-10 01:47:35,562 | INFO | services.validation | Validating the expected values : Passed
+2026-05-10 01:47:35,562 | INFO | services.validation | Validating the None , Nan ,condition : Passed
+2026-05-10 01:47:35,562 | INFO | services.text_Validation | started the text validation 
+2026-05-10 01:47:35,563 | INFO | services.text_Validation | started the text validation : PASSED
+2026-05-10 01:47:35,563 | INFO | services.KPIs_calculation | starting the Kpi calculation
+2026-05-10 01:47:35,586 | INFO | services.KPIs_calculation | Kpi calculated successfully
+2026-05-10 01:47:35,586 | INFO | services.data_injection | Started data injection
+2026-05-10 01:47:35,614 | INFO | services.data_injection | Data injection is successfull
+2026-05-10 01:51:18,899 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:51:18,904 | DEBUG | python_multipart.multipart | Calling on_header_field with data[42:61]
+2026-05-10 01:51:18,905 | DEBUG | python_multipart.multipart | Calling on_header_value with data[63:99]
+2026-05-10 01:51:18,905 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:51:18,905 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:51:18,905 | DEBUG | python_multipart.multipart | Calling on_part_data with data[103:144]
+2026-05-10 01:51:18,905 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_header_field with data[188:207]
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_header_value with data[209:245]
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_part_data with data[249:255]
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_header_field with data[299:318]
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_header_value with data[320:348]
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_part_data with data[352:358]
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_header_field with data[402:421]
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_header_value with data[423:452]
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:51:18,906 | DEBUG | python_multipart.multipart | Calling on_part_data with data[456:461]
+2026-05-10 01:51:18,907 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:51:18,907 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:51:18,907 | DEBUG | python_multipart.multipart | Calling on_header_field with data[505:524]
+2026-05-10 01:51:18,907 | DEBUG | python_multipart.multipart | Calling on_header_value with data[526:574]
+2026-05-10 01:51:18,907 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:51:18,907 | DEBUG | python_multipart.multipart | Calling on_header_field with data[576:588]
+2026-05-10 01:51:18,907 | DEBUG | python_multipart.multipart | Calling on_header_value with data[590:598]
+2026-05-10 01:51:18,907 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:51:18,907 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:51:18,908 | DEBUG | python_multipart.multipart | Calling on_part_data with data[602:5607]
+2026-05-10 01:51:18,908 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:51:18,908 | DEBUG | python_multipart.multipart | Calling on_end with no data
+2026-05-10 01:51:18,918 | INFO | main |  the filetype is valid
+2026-05-10 01:51:18,920 | INFO | services.validation | Starting the data validation process
+2026-05-10 01:51:18,976 | INFO | services.validation | Validating dataframe not empty : passed
+2026-05-10 01:51:18,978 | INFO | services.validation | checking the mandatory columns : passed
+2026-05-10 01:51:18,988 | INFO | services.validation | validating the columns type : passed
+2026-05-10 01:51:18,991 | INFO | services.validation | Validating the expected values : Passed
+2026-05-10 01:51:18,992 | INFO | services.validation | Validating the None , Nan ,condition : Passed
+2026-05-10 01:51:18,992 | INFO | services.text_Validation | started the text validation 
+2026-05-10 01:51:18,992 | INFO | services.text_Validation | started the text validation : PASSED
+2026-05-10 01:51:18,992 | INFO | services.KPIs_calculation | starting the Kpi calculation
+2026-05-10 01:51:19,068 | INFO | services.KPIs_calculation | Kpi calculated successfully
+2026-05-10 01:51:19,068 | INFO | services.data_injection | Started data injection
+2026-05-10 01:51:19,121 | INFO | services.data_injection | Data injection is successfull
+2026-05-10 01:55:33,703 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:55:33,704 | DEBUG | python_multipart.multipart | Calling on_header_field with data[42:61]
+2026-05-10 01:55:33,704 | DEBUG | python_multipart.multipart | Calling on_header_value with data[63:99]
+2026-05-10 01:55:33,705 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:55:33,705 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:55:33,705 | DEBUG | python_multipart.multipart | Calling on_part_data with data[103:144]
+2026-05-10 01:55:33,705 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:55:33,705 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:55:33,705 | DEBUG | python_multipart.multipart | Calling on_header_field with data[188:207]
+2026-05-10 01:55:33,705 | DEBUG | python_multipart.multipart | Calling on_header_value with data[209:245]
+2026-05-10 01:55:33,706 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:55:33,706 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:55:33,706 | DEBUG | python_multipart.multipart | Calling on_part_data with data[249:255]
+2026-05-10 01:55:33,706 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:55:33,706 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:55:33,706 | DEBUG | python_multipart.multipart | Calling on_header_field with data[299:318]
+2026-05-10 01:55:33,706 | DEBUG | python_multipart.multipart | Calling on_header_value with data[320:348]
+2026-05-10 01:55:33,706 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:55:33,706 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:55:33,706 | DEBUG | python_multipart.multipart | Calling on_part_data with data[352:358]
+2026-05-10 01:55:33,706 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:55:33,706 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:55:33,706 | DEBUG | python_multipart.multipart | Calling on_header_field with data[402:421]
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_header_value with data[423:452]
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_part_data with data[456:461]
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_header_field with data[505:524]
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_header_value with data[526:574]
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_header_field with data[576:588]
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_header_value with data[590:598]
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_part_data with data[602:5607]
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:55:33,707 | DEBUG | python_multipart.multipart | Calling on_end with no data
+2026-05-10 01:55:33,709 | INFO | main |  the filetype is valid
+2026-05-10 01:55:33,710 | INFO | services.validation | Starting the data validation process
+2026-05-10 01:55:33,720 | INFO | services.validation | Validating dataframe not empty : passed
+2026-05-10 01:55:33,721 | INFO | services.validation | checking the mandatory columns : passed
+2026-05-10 01:55:33,724 | INFO | services.validation | validating the columns type : passed
+2026-05-10 01:55:33,725 | INFO | services.validation | Validating the expected values : Passed
+2026-05-10 01:55:33,725 | INFO | services.validation | Validating the None , Nan ,condition : Passed
+2026-05-10 01:55:33,725 | INFO | services.text_Validation | started the text validation 
+2026-05-10 01:55:33,725 | INFO | services.text_Validation | started the text validation : PASSED
+2026-05-10 01:55:33,725 | INFO | services.KPIs_calculation | starting the Kpi calculation
+2026-05-10 01:55:33,757 | INFO | services.KPIs_calculation | Kpi calculated successfully
+2026-05-10 01:55:33,758 | INFO | services.data_injection | Started data injection
+2026-05-10 01:55:33,788 | INFO | services.data_injection | Data injection is successfull
+2026-05-10 01:57:54,608 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:57:54,609 | DEBUG | python_multipart.multipart | Calling on_header_field with data[42:61]
+2026-05-10 01:57:54,609 | DEBUG | python_multipart.multipart | Calling on_header_value with data[63:99]
+2026-05-10 01:57:54,609 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:57:54,609 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:57:54,609 | DEBUG | python_multipart.multipart | Calling on_part_data with data[103:144]
+2026-05-10 01:57:54,609 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:57:54,609 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:57:54,609 | DEBUG | python_multipart.multipart | Calling on_header_field with data[188:207]
+2026-05-10 01:57:54,609 | DEBUG | python_multipart.multipart | Calling on_header_value with data[209:245]
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_part_data with data[249:255]
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_header_field with data[299:318]
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_header_value with data[320:348]
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_part_data with data[352:358]
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_header_field with data[402:421]
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_header_value with data[423:452]
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:57:54,610 | DEBUG | python_multipart.multipart | Calling on_part_data with data[456:461]
+2026-05-10 01:57:54,611 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:57:54,611 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 01:57:54,611 | DEBUG | python_multipart.multipart | Calling on_header_field with data[505:524]
+2026-05-10 01:57:54,611 | DEBUG | python_multipart.multipart | Calling on_header_value with data[526:574]
+2026-05-10 01:57:54,611 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:57:54,611 | DEBUG | python_multipart.multipart | Calling on_header_field with data[576:588]
+2026-05-10 01:57:54,611 | DEBUG | python_multipart.multipart | Calling on_header_value with data[590:598]
+2026-05-10 01:57:54,611 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 01:57:54,611 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 01:57:54,611 | DEBUG | python_multipart.multipart | Calling on_part_data with data[602:5607]
+2026-05-10 01:57:54,611 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 01:57:54,611 | DEBUG | python_multipart.multipart | Calling on_end with no data
+2026-05-10 01:57:54,612 | INFO | main |  the filetype is valid
+2026-05-10 01:57:54,612 | INFO | services.validation | Starting the data validation process
+2026-05-10 01:57:54,621 | INFO | services.validation | Validating dataframe not empty : passed
+2026-05-10 01:57:54,623 | INFO | services.validation | checking the mandatory columns : passed
+2026-05-10 01:57:54,627 | INFO | services.validation | validating the columns type : passed
+2026-05-10 01:57:54,628 | INFO | services.validation | Validating the expected values : Passed
+2026-05-10 01:57:54,628 | INFO | services.validation | Validating the None , Nan ,condition : Passed
+2026-05-10 01:57:54,628 | INFO | services.text_Validation | started the text validation 
+2026-05-10 01:57:54,628 | INFO | services.text_Validation | started the text validation : PASSED
+2026-05-10 01:57:54,628 | INFO | services.KPIs_calculation | starting the Kpi calculation
+2026-05-10 01:57:54,664 | INFO | services.KPIs_calculation | Kpi calculated successfully
+2026-05-10 01:57:54,665 | INFO | services.data_injection | Started data injection
+2026-05-10 01:57:54,703 | INFO | services.data_injection | Data injection is successfull
+2026-05-10 12:13:39,498 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:13:39,499 | DEBUG | python_multipart.multipart | Calling on_header_field with data[57:76]
+2026-05-10 12:13:39,499 | DEBUG | python_multipart.multipart | Calling on_header_value with data[78:114]
+2026-05-10 12:13:39,499 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:13:39,499 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:13:39,499 | DEBUG | python_multipart.multipart | Calling on_part_data with data[118:124]
+2026-05-10 12:13:39,499 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:13:39,499 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:13:39,499 | DEBUG | python_multipart.multipart | Calling on_header_field with data[183:202]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_value with data[204:240]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_part_data with data[244:250]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_field with data[309:328]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_value with data[330:358]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_part_data with data[362:368]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_field with data[427:446]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_value with data[448:477]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_part_data with data[481:487]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_field with data[546:565]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_value with data[567:615]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_field with data[617:629]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_value with data[631:655]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_part_data with data[659:5664]
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:13:39,500 | DEBUG | python_multipart.multipart | Calling on_end with no data
+2026-05-10 12:13:39,501 | INFO | main |  the filetype is valid
+2026-05-10 12:13:39,501 | INFO | services.validation | Starting the data validation process
+2026-05-10 12:13:39,507 | INFO | services.validation | Validating dataframe not empty : passed
+2026-05-10 12:13:39,508 | INFO | services.validation | checking the mandatory columns : passed
+2026-05-10 12:13:39,512 | INFO | services.validation | validating the columns type : passed
+2026-05-10 12:13:39,514 | INFO | services.validation | Validating the expected values : Passed
+2026-05-10 12:13:39,515 | INFO | services.validation | Validating the None , Nan ,condition : Passed
+2026-05-10 12:13:39,515 | INFO | services.text_Validation | started the text validation 
+2026-05-10 12:13:39,515 | INFO | services.text_Validation | started the text validation : PASSED
+2026-05-10 12:13:39,515 | INFO | services.KPIs_calculation | starting the Kpi calculation
+2026-05-10 12:13:39,550 | INFO | services.KPIs_calculation | Kpi calculated successfully
+2026-05-10 12:13:39,550 | INFO | services.data_injection | Started data injection
+2026-05-10 12:13:39,578 | INFO | services.data_injection | Data injection is successfull
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_header_field with data[56:75]
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_header_value with data[77:113]
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_part_data with data[117:242]
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_header_field with data[300:319]
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_header_value with data[321:357]
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_part_data with data[361:1729]
+2026-05-10 12:16:46,763 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_header_field with data[1787:1806]
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_header_value with data[1808:1836]
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_part_data with data[1840:3208]
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_header_field with data[3266:3285]
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_header_value with data[3287:3316]
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_part_data with data[3320:3344]
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_header_field with data[3402:3421]
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_header_value with data[3423:3471]
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_header_field with data[3473:3485]
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_header_value with data[3487:3511]
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_part_data with data[3515:8520]
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:16:46,764 | DEBUG | python_multipart.multipart | Calling on_end with no data
+2026-05-10 12:16:46,765 | INFO | main |  the filetype is valid
+2026-05-10 12:16:46,765 | INFO | services.validation | Starting the data validation process
+2026-05-10 12:16:46,770 | INFO | services.validation | Validating dataframe not empty : passed
+2026-05-10 12:16:46,770 | INFO | services.validation | checking the mandatory columns : passed
+2026-05-10 12:16:46,772 | INFO | services.validation | validating the columns type : passed
+2026-05-10 12:16:46,774 | INFO | services.validation | Validating the expected values : Passed
+2026-05-10 12:16:46,774 | INFO | services.validation | Validating the None , Nan ,condition : Passed
+2026-05-10 12:16:46,774 | INFO | services.text_Validation | started the text validation 
+2026-05-10 12:16:46,774 | ERROR | services.text_Validation | Recommendation_cmt can't have more than 850 characters
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_header_field with data[57:76]
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_header_value with data[78:114]
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_part_data with data[118:243]
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_header_field with data[302:321]
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_header_value with data[323:359]
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_part_data with data[363:563]
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_header_field with data[622:641]
+2026-05-10 12:17:16,288 | DEBUG | python_multipart.multipart | Calling on_header_value with data[643:671]
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_part_data with data[675:875]
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_header_field with data[934:953]
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_header_value with data[955:984]
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_part_data with data[988:1012]
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_header_field with data[1071:1090]
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_header_value with data[1092:1140]
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_header_field with data[1142:1154]
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_header_value with data[1156:1180]
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_part_data with data[1184:6189]
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:17:16,289 | DEBUG | python_multipart.multipart | Calling on_end with no data
+2026-05-10 12:17:16,290 | INFO | main |  the filetype is valid
+2026-05-10 12:17:16,290 | INFO | services.validation | Starting the data validation process
+2026-05-10 12:17:16,291 | INFO | services.validation | Validating dataframe not empty : passed
+2026-05-10 12:17:16,291 | INFO | services.validation | checking the mandatory columns : passed
+2026-05-10 12:17:16,293 | INFO | services.validation | validating the columns type : passed
+2026-05-10 12:17:16,293 | INFO | services.validation | Validating the expected values : Passed
+2026-05-10 12:17:16,293 | INFO | services.validation | Validating the None , Nan ,condition : Passed
+2026-05-10 12:17:16,293 | INFO | services.text_Validation | started the text validation 
+2026-05-10 12:17:16,294 | INFO | services.text_Validation | started the text validation : PASSED
+2026-05-10 12:17:16,294 | INFO | services.KPIs_calculation | starting the Kpi calculation
+2026-05-10 12:17:16,321 | INFO | services.KPIs_calculation | Kpi calculated successfully
+2026-05-10 12:17:16,321 | INFO | services.data_injection | Started data injection
+2026-05-10 12:17:16,342 | INFO | services.data_injection | Data injected successfull
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_header_field with data[57:76]
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_header_value with data[78:114]
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_part_data with data[118:243]
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_header_field with data[302:321]
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_header_value with data[323:359]
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_part_data with data[363:563]
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_header_field with data[622:641]
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_header_value with data[643:671]
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_part_data with data[675:875]
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_header_field with data[934:953]
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_header_value with data[955:984]
+2026-05-10 12:20:20,866 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_part_data with data[988:1012]
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_part_begin with no data
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_header_field with data[1071:1090]
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_header_value with data[1092:1140]
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_header_field with data[1142:1154]
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_header_value with data[1156:1180]
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_header_end with no data
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_headers_finished with no data
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_part_data with data[1184:6189]
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_part_end with no data
+2026-05-10 12:20:20,867 | DEBUG | python_multipart.multipart | Calling on_end with no data
+2026-05-10 12:20:20,867 | INFO | main |  the filetype is valid
+2026-05-10 12:20:20,868 | INFO | services.validation | Starting the data validation process
+2026-05-10 12:20:20,871 | INFO | services.validation | Validating dataframe not empty : passed
+2026-05-10 12:20:20,871 | INFO | services.validation | checking the mandatory columns : passed
+2026-05-10 12:20:20,873 | INFO | services.validation | validating the columns type : passed
+2026-05-10 12:20:20,874 | INFO | services.validation | Validating the expected values : Passed
+2026-05-10 12:20:20,875 | INFO | services.validation | Validating the None , Nan ,condition : Passed
+2026-05-10 12:20:20,875 | INFO | services.text_Validation | started the text validation 
+2026-05-10 12:20:20,875 | INFO | services.text_Validation | started the text validation : PASSED
+2026-05-10 12:20:20,875 | INFO | services.KPIs_calculation | starting the Kpi calculation
+2026-05-10 12:20:20,897 | INFO | services.KPIs_calculation | Kpi calculated successfully
+2026-05-10 12:20:20,898 | INFO | services.data_injection | Started data injection
+2026-05-10 12:20:20,918 | INFO | services.data_injection | Data injected successfull
