@@ -1,3 +1,4 @@
 env
 mock_data.csv
 __pycache__
+storage/

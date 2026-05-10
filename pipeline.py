@@ -3,7 +3,7 @@ from services.KPIs_calculation import get_KPIs
 from services.text_Validation import validate_text
 from services.data_injection import injecting_data
 from services.pdf_rendering import render_pdf
-from services.get_aggregates import get_aggregates
+from services.storing_aggTables import store_aggr
 import asyncio
 
 
@@ -23,8 +23,8 @@ async def Pipeline(content,report_input,request_id):
     injecting_data(request_id,report_input,recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_chart)
 
     #storing aggregation tables into excel workbook
+    store_aggr(request_id,tables)
     base_path = f"storage/{request_id}"
-
     # rendering pdf
     await asyncio.to_thread(
         render_pdf,

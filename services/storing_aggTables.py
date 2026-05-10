@@ -2,10 +2,11 @@ from io import BytesIO
 import pandas as pd 
 import os
 import logging
+import xlsxwriter
 
 logger = logging.getLogger(__name__)
 
-def get_aggregates(request_id,tables:dict ):
+def store_aggr(request_id,tables:dict ):
     """
         Writes a dict of DataFrames to an Excel buffer and saves the file to
     storage/<request_id>/.
@@ -18,7 +19,7 @@ def get_aggregates(request_id,tables:dict ):
     logger.info("storing the aggregation tables ...")
     excel_buffer = BytesIO()
 
-    with pd.ExcelWriter(output, engine="openpyxl") as writer:
+    with pd.ExcelWriter(excel_buffer, engine="xlsxwriter") as writer:
         for sheetname, df in tables.items():
             df.to_excel(
                 writer,
@@ -26,15 +27,15 @@ def get_aggregates(request_id,tables:dict ):
                 index=False
             )
     
+    excel_buffer.seek(0)
     #storing the excelfile 
     base_path = f"storage/{request_id}"
-    file_path = os.path.join(base_path,"tables.xlsx")
+    file_path = os.path.join(base_path,"tables.xls")
     with open(file_path,"wb") as f:
         f.write(excel_buffer.read())
     
     logger.info("storage of the aggregation tables : PASSED")
     
-    excel_buffer.seek(0)
 
 
 
