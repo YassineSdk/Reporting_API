@@ -50,24 +50,28 @@ def root():
 async def Reporting_gen(
     report_description: Annotated[
             str,
-            Form(description="Short description displayed under the report title"),
-    ],
+            Form(description="Short description displayed under the report title",
+            example="Rapport de suivi du premier trimestre 2024"),
+        ],
     Recommendation_cmt: Annotated[
             str,
-            Form(description="Commentary for the recommendations section"),
-    ],
+            Form(description="Commentary for the recommendations section",
+            example="Les recommandations ont montré un taux d'acceptation de 85% au cours de cette période. Les actions correctives ont été mises en place pour les cas non acceptés."),
+        ],
     Action_cmt: Annotated[
             str,
-            Form(description="Commentary for the actions section"),
-    ],
+            Form(description="Commentary for the actions section",
+            example="Les actions en cours représentent 60% du total avec un taux de mise en œuvre de 92% pour les actions critiques. Trois actions sont en retard et font l'objet d'un suivi renforcé."),
+        ],
     footer_text: Annotated[
             str,
-            Form(description="Footer text displayed at the bottom of the report"),
-    ],
+            Form(description="Footer text displayed at the bottom of the report",
+            example="Rapport confidentiel - Tous droits réservés ONCF"),
+        ],
 
     data:UploadFile = File(
         ...,
-        description="CSV file"
+        description="CSV file containing the data for the report"
         )
     ):
 
