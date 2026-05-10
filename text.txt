@@ -1,0 +1,37 @@
+
+  "report_input": {
+    "report_description": "string",
+    "Recommendation_cmt": "string",
+    "Action_cmt": "string",
+    "footer_text": "string"
+  },
+  "Recom_Kpis": {
+    "Total_recom": 26,
+    "Total_recom_ACC": 20,
+    "Total_recom_Rej": 3,
+    "Total_recom_etu": 3,
+    "acceptation_rate": 77
+  },
+  "Recom_chart": {
+    "Critique": 11,
+    "Mineur": 2,
+    "Modéré": 7
+  },
+  "action_KPis": {
+    "total_actions": 21,
+    "T1": 23,
+    "T2": 27
+  },
+  "Action barchart": {
+    "Clôturées": 3,
+    "En continue": 2,
+    "En cours": 4,
+    "En retard": 3,
+    "Non échues": 8,
+    "Rééchelonnées": 1
+  },
+  "Action piechart": {
+    "Critique": 14,
+    "Mineur": 2,
+    "Modéré": 6
+  }

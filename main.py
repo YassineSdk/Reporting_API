@@ -1,6 +1,8 @@
 from fastapi import FastAPI, Form, UploadFile, File, Response , HTTPException 
 from schemas.report_model import ReportModel
+from fastapi.responses import FileResponse
 import os 
+from datetime import date
 import json 
 import logging
 from typing import Annotated
@@ -8,6 +10,9 @@ from typing import Annotated
 from services.validation import Validate_data
 from services.KPIs_calculation import get_KPIs
 from services.logger_setup import setup_logging
+from services.text_Validation import validate_text
+from services.data_injection import injecting_data
+from services.pdf_rendering import render_pdf
 
 # logging config
 setup_logging()
@@ -72,33 +77,39 @@ async def Reporting_gen(
     logger.info(" the filetype is valid")
 
     # Creating the request model
-    report_input = ReportModel(
+    text_input = ReportModel(
         report_description=report_description,
         Recommendation_cmt=Recommendation_cmt,
         Action_cmt=Action_cmt,
         footer_text=footer_text,
     )
 
-
+    report_input = text_input.model_dump()
 
     # Read Csv file 
     content = await data.read()
 
     ## Process
+
     # Data validation 
     data = Validate_data(content)
 
+    # text input validation 
+    validate_text(report_input)
+
     # Kpis calculation 
-    print('starting the Kpi calculation')
     recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_chart = get_KPIs(data)
-    print('Kpi calculated successfully')
 
+    #data injection 
+    injecting_data(report_input,recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_chart)
 
-    return {
-        "report_input":report_input,
-        "Recom_Kpis" : recommed_KPis,
-        "Recom_chart":RE_chart, 
-        "action_KPis":action_KPIs,
-        "Action barchart":AS_chart,
-        "Action piechart":AE_chart
-    }
+    #pdf rendering
+    render_pdf("reports/preview.html","reports/report.pdf")
+
+    file_path = "reports/report.pdf"
+    file_name = f"report_{date.today()}"
+    return FileResponse(
+        path=file_path,
+        media_type="application/pdf",
+        filename=file_name
+    )

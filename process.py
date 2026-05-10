@@ -45,8 +45,6 @@ with open('reports/preview.html', 'w', encoding='utf-8') as f:
 print("Report generated: preview.html")
 print("Double-click preview.html to open in your browser")
 
-from playwright.sync_api import sync_playwright
-from pathlib import Path
 
 def html_to_pdf(html_path, output_path):
     with sync_playwright() as p:

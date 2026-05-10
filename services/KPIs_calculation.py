@@ -20,6 +20,7 @@ def get_KPIs(data:pd.DataFrame)-> dict:
             AE_chart = {}        actions by evaluation
 
     """
+    logger.info('starting the Kpi calculation')
 
     recommed_KPis = {} #stores recomendation kPIS
     action_KPIs = {}
@@ -106,6 +107,8 @@ def get_KPIs(data:pd.DataFrame)-> dict:
     action_KPIs['total_actions'] = tableau_3['nb_action'].sum().item()
     action_KPIs["T1"] = T1.item()
     action_KPIs["T2"] = T2.item() 
+
+    logger.info('Kpi calculated successfully')
 
     return recommed_KPis,RE_chart, action_KPIs,AS_chart,AE_chart
 
