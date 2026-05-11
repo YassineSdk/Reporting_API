@@ -12,7 +12,7 @@ def clear_storage():
         return
     
     now = datetime.now()
-    cutoff = timedelta(minutes=10)
+    cutoff = timedelta(minutes=20)
     deleted = 0
 
     for folder in os.scandir("storage"):

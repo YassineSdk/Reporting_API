@@ -3,11 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>ONCF • Rapport de Suivi des Recommandations et actions</title>
-<!-- Fonts: Source Serif 4 & DM Sans -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<title>Rapport de Suivi des plans d'actions </title>
 <style>
 
 :root {
@@ -39,7 +35,7 @@
 }
 
 body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: Arial, sans-serif;
     background: #DCDCDC;
     color: var(--body);
     font-size: 13px;
@@ -145,7 +141,7 @@ body {
 }
 
 .report-title {
-    font-family: 'Source Serif 4', serif;
+    font-family: Georgia, serif;
     font-size: 22px;
     font-weight: 700;
     color: var(--orange);
@@ -156,7 +152,7 @@ body {
 
 .report-description {
     font-size: 11.5px;
-    color: var(--muted);
+    color: #000000;
     font-style: italic;
     line-height: 1.6;
 }
@@ -179,7 +175,7 @@ body {
 }
 
 .section-num {
-    font-family: 'Source Serif 4', serif;
+    font-family: Georgia, serif;
     font-size: 17px;
     font-weight: 700;
     font-style: italic;
@@ -282,14 +278,14 @@ body {
 
 .chart-axis-label {
     fill: #333333;
-    font-family: 'DM Sans', 'Trebuchet MS', sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 9px;
     font-weight: 600;
 }
 
 .chart-value-label {
     fill: #333333;
-    font-family: 'DM Sans', 'Trebuchet MS', sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 9px;
     font-weight: 800;
 }
@@ -385,13 +381,13 @@ body {
 /* Footer */
 .footer {
     margin-top: auto;
-    padding: 10px 28px;
+    padding: 20px 28px 10px;
     border-top: 1px solid var(--border);
 }
 
 .footer-text {
     font-size: 10px;
-    color: var(--light);
+    color: #000000; 
     font-style: italic;
 }
 
@@ -454,14 +450,14 @@ body {
     </div>
     </div>
     <div class="header-right">
-    <span class="dept-label">Departement audit interne et de gestion de risques</span>
+    <span class="dept-label">Département audit interne </span>
     <span class="report-date">{{ report_date | default('06 mai 2026') }}</span>
     </div>
 </header>
 
 <!-- TITLE -->
 <div class="title-section">
-    <div class="report-title">Rapport de Suivi de Recommendation</div>
+    <div class="report-title">Rapport de Suivi des plans d'actions</div>
     <div class="report-description">{{ report_description | default('Rapport de Suivi de Recommendation Rapport de Suivi de Recommendation Rapport de Suivi de Recommendation Rapport de Suivi de Recommendation Rapport de Suivi de Recommendation .') }}</div>
 </div>
 
@@ -469,7 +465,7 @@ body {
 <div class="section">
     <div class="section-heading">
     <span class="section-num">01</span>
-    <span class="section-title">Indicateurs clés : Les Recommendations</span>
+    <span class="section-title">Indicateurs clés : Les Recommandations</span>
     </div>
 
     <!-- KPI Strip -->
@@ -487,7 +483,7 @@ body {
         <div class="kpi-value">{{ recommendations_not_accepted | default('10') }}</div>
     </div>
     <div class="kpi-cell">
-        <div class="kpi-label">NB de recommandation à l'étude</div>
+        <div class="kpi-label">NB de recommandations à l'étude</div>
         <div class="kpi-value">{{ recommendations_under_study | default('15') }}</div>
     </div>
     <div class="kpi-cell">
@@ -502,15 +498,15 @@ body {
         <div class="chart-block-title">Répartition du nombre de recommandations acceptées par criticité</div>
         <div class="chart-container" style="height: 130px;">
         <svg class="chart-svg" viewBox="0 0 320 120" role="img" aria-label="Répartition des recommandations acceptées par criticité">
-            <text class="chart-axis-label" x="0" y="25">critique</text>
+            <text class="chart-axis-label" x="0" y="25">Critique</text>
             <rect x="62" y="13" width="{{ (s1_critique * s1_scale) | round(2) }}" height="18" fill="#D32F2F"></rect>
             <text class="chart-value-label" x="{{ 68 + (s1_critique * s1_scale) | round(2) }}" y="26">{{ s1_critique | round(1) | int }}</text>
 
-            <text class="chart-axis-label" x="0" y="60">moderé</text>
+            <text class="chart-axis-label" x="0" y="60">Modéré</text>
             <rect x="62" y="48" width="{{ (s1_modere * s1_scale) | round(2) }}" height="18" fill="#388E3C"></rect>
             <text class="chart-value-label" x="{{ 68 + (s1_modere * s1_scale) | round(2) }}" y="61">{{ s1_modere | round(1) | int }}</text>
 
-            <text class="chart-axis-label" x="0" y="95">mineur</text>
+            <text class="chart-axis-label" x="0" y="95">Mineur</text>
             <rect x="62" y="83" width="{{ (s1_mineur * s1_scale) | round(2) }}" height="18" fill="#7B1FA2"></rect>
             <text class="chart-value-label" x="{{ 68 + (s1_mineur * s1_scale) | round(2) }}" y="96">{{ s1_mineur | round(1) | int }}</text>
         </svg>
@@ -534,41 +530,41 @@ body {
     <!-- Left KPI stack -->
     <div class="kpi-stack">
         <div class="kpi-stack-cell">
-        <div class="ks-label">Nombre total d'actions</div>
+        <div class="ks-label">Nombre total des actions</div>
         <div class="ks-value">{{ total_actions | default('50') }}</div>
         </div>
         <div class="kpi-stack-cell">
-        <div class="ks-label">Taux de mise en œuvre d'actions</div>
+        <div class="ks-label">Taux de mise en œuvre des actions</div>
         <div class="ks-value">{{ actions_implementation_rate | default('42') }}%</div>
         </div>
         <div class="kpi-stack-cell">
-        <div class="ks-label">Taux de mise en œuvre d'actions critiques</div>
+        <div class="ks-label">Taux de mise en œuvre des actions critiques</div>
         <div class="ks-value">{{ critical_actions_implementation_rate | default('36') }}%</div>
         </div>
     </div>
 
     <!-- Middle bar chart -->
     <div>
-        <div class="chart-block-title">Répartition du nombre d'actions par status avancement</div>
+        <div class="chart-block-title">Répartition du nombre d'actions par statut d'avancement</div>
         <div class="chart-container" style="height: 185px;">
         <svg class="chart-svg" viewBox="0 0 260 170" role="img" aria-label="Répartition des actions par statut d'avancement">
-            <text class="chart-axis-label" x="0" y="24">non échues</text>
+            <text class="chart-axis-label" x="0" y="24">Non échues</text>
             <rect x="74" y="12" width="{{ (s2_non_echues * s2_scale) | round(2) }}" height="18" fill="#1565C0"></rect>
             <text class="chart-value-label" x="{{ 80 + (s2_non_echues * s2_scale) | round(2) }}" y="25">{{ s2_non_echues | round(1) | int }}</text>
 
-            <text class="chart-axis-label" x="0" y="56">en cours</text>
+            <text class="chart-axis-label" x="0" y="56">En cours</text>
             <rect x="74" y="44" width="{{ (s2_en_cours * s2_scale) | round(2) }}" height="18" fill="#7B1FA2"></rect>
             <text class="chart-value-label" x="{{ 80 + (s2_en_cours * s2_scale) | round(2) }}" y="57">{{ s2_en_cours | round(1) | int }}</text>
 
-            <text class="chart-axis-label" x="0" y="88">Cloturé</text>
+            <text class="chart-axis-label" x="0" y="88">Clôturé</text>
             <rect x="74" y="76" width="{{ (s2_cloture * s2_scale) | round(2) }}" height="18" fill="#388E3C"></rect>
             <text class="chart-value-label" x="{{ 80 + (s2_cloture * s2_scale) | round(2) }}" y="89">{{ s2_cloture | round(1) | int }}</text>
 
-            <text class="chart-axis-label" x="0" y="120">en retard</text>
+            <text class="chart-axis-label" x="0" y="120">En retard</text>
             <rect x="74" y="108" width="{{ (s2_en_retard * s2_scale) | round(2) }}" height="18" fill="#D32F2F"></rect>
             <text class="chart-value-label" x="{{ 80 + (s2_en_retard * s2_scale) | round(2) }}" y="121">{{ s2_en_retard | round(1) | int }}</text>
 
-            <text class="chart-axis-label" x="0" y="152">rééchelonneé</text>
+            <text class="chart-axis-label" x="0" y="152">Rééchelonnée</text>
             <rect x="74" y="140" width="{{ (s2_reechelonne * s2_scale) | round(2) }}" height="18" fill="#00796B"></rect>
             <text class="chart-value-label" x="{{ 80 + (s2_reechelonne * s2_scale) | round(2) }}" y="153">{{ s2_reechelonne | round(1) | int }}</text>
         </svg>
@@ -589,9 +585,9 @@ body {
                 stroke-dasharray="{{ (pie_circ * pie_mineur_pct / 100) | round(2) }} {{ pie_circ | round(2) }}" stroke-dashoffset="-{{ (pie_circ * (pie_critique_pct + pie_modere_pct) / 100) | round(2) }}" transform="rotate(-90 60 38)"></circle>
         </svg>
         <div class="pie-legend">
-            <div class="pie-legend-item"><span class="pie-swatch" style="background:#D32F2F;"></span>critique {{ pie_critique_pct | round(1) }}%</div>
-            <div class="pie-legend-item"><span class="pie-swatch" style="background:#388E3C;"></span>moderé {{ pie_modere_pct | round(1) }}%</div>
-            <div class="pie-legend-item"><span class="pie-swatch" style="background:#00796B;"></span>mineur {{ pie_mineur_pct | round(1) }}%</div>
+            <div class="pie-legend-item"><span class="pie-swatch" style="background:#D32F2F;"></span>Critique {{ pie_critique_pct | round(1) }}%</div>
+            <div class="pie-legend-item"><span class="pie-swatch" style="background:#388E3C;"></span>Modéré {{ pie_modere_pct | round(1) }}%</div>
+            <div class="pie-legend-item"><span class="pie-swatch" style="background:#00796B;"></span>Mineur {{ pie_mineur_pct | round(1) }}%</div>
         </div>
         </div>
     </div>
@@ -605,7 +601,7 @@ body {
 
 <!-- FOOTER -->
 <footer class="footer">
-    <div class="footer-text">{{ footer_text | default('Recommendation Rapport de Suivi de Recommendation Rapport de Suivi de Recommendation Rapport de Suivi de Recommendation .') }}</div>
+    <div class="footer-text">{{ footer_text | default('Recommandation Rapport de Suivi de Recommandation Rapport de Suivi de Recommandation Rapport de Suivi de Recommandation .') }}</div>
 </footer>
 </div>
 

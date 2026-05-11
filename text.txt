@@ -24,7 +24,7 @@
   },
   "Action barchart": {
     "Clôturées": 3,
-    "En continue": 2,
+    "En continu": 2,
     "En cours": 4,
     "En retard": 3,
     "Non échues": 8,

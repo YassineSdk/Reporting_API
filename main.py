@@ -13,7 +13,7 @@ from pipeline import Pipeline
 from services.logger_setup import setup_logging
 from services.clear_storage import clear_storage
 from contextlib import asynccontextmanager
-
+import time
 # logging config
 setup_logging()
 
@@ -138,15 +138,19 @@ async def get_report_pdf(
             detail=f"the file does not exists in {file_path}"
         )
 
-    file_name = f"report_{date.today()}"
+    file_name = f"report_{date.today()}.pdf"
+
+    file_size = Path(file_path).stat().st_size
+    logger.info(f"PDF size before serving: {file_size} bytes")
 
     return FileResponse(
         path=file_path,
         media_type="application/pdf",
-        filename=file_name,
         headers={
-        "Content-Disposition": "attachment; filename=report.pdf"
-    }
+            "Content-Disposition": f"inline; filename=\"{file_name}\"",
+            "Cache-Control": "no-cache",
+            "X-Content-Type-Options": "nosniff"
+        }
     )
 
 @app.get("/tables")
