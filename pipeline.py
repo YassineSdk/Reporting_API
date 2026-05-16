@@ -25,6 +25,7 @@ async def Pipeline(content,report_input,request_id):
     #storing aggregation tables into excel workbook
     store_aggr(request_id,tables)
     base_path = f"storage/{request_id}"
+    
     # rendering pdf
     await asyncio.to_thread(
         render_pdf,

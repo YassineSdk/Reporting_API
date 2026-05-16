@@ -31,7 +31,7 @@ def render_pdf(html_path, output_path):
         page = context.new_page()
         abs_path = os.path.abspath(html_path)
         page.goto(f"file:///{abs_path}", wait_until="networkidle")
-        page.wait_for_timeout(1500)
+        page.wait_for_timeout(2000)
         
         page.pdf(
             path=output_path,
