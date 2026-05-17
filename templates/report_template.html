@@ -422,9 +422,10 @@ body {
 {% set s2_non_echues = chart_s2_non_echues | default(10) | float %}
 {% set s2_en_cours = chart_s2_en_cours | default(14) | float %}
 {% set s2_cloture = chart_s2_cloture | default(6) | float %}
+{% set s2_en_continue = chart_s2_en_continue | default(10) | float %}
 {% set s2_en_retard = chart_s2_en_retard | default(8) | float %}
 {% set s2_reechelonne = chart_s2_reechelonne | default(10) | float %}
-{% set s2_max = [s2_non_echues, s2_en_cours, s2_cloture, s2_en_retard, s2_reechelonne] | max %}
+{% set s2_max = [s2_non_echues, s2_en_cours, s2_cloture,s2_en_continue, s2_en_retard, s2_reechelonne] | max %}
 {% set s2_scale = 140 / (s2_max if s2_max > 0 else 1) %}
 {% set pie_critique = chart_pie_critique | default(37) | float %}
 {% set pie_modere = chart_pie_modere | default(18.5) | float %}
@@ -496,7 +497,7 @@ body {
     <div class="s01-row">
     <div>
         <div class="chart-block-title">Répartition du nombre de recommandations acceptées par criticité</div>
-        <div class="chart-container" style="height: 130px;">
+        <div class="chart-container" style="height: 215px;">
         <svg class="chart-svg" viewBox="0 0 320 120" role="img" aria-label="Répartition des recommandations acceptées par criticité">
             <text class="chart-axis-label" x="0" y="25">Critique</text>
             <rect x="62" y="13" width="{{ (s1_critique * s1_scale) | round(2) }}" height="18" fill="#D32F2F"></rect>
@@ -546,27 +547,31 @@ body {
     <!-- Middle bar chart -->
     <div>
         <div class="chart-block-title">Répartition du nombre d'actions par statut d'avancement</div>
-        <div class="chart-container" style="height: 185px;">
-        <svg class="chart-svg" viewBox="0 0 260 170" role="img" aria-label="Répartition des actions par statut d'avancement">
+        <div class="chart-container" style="height: 215px;">
+        <svg class="chart-svg" viewBox="0 0 260 200" role="img" aria-label="Répartition des actions par statut d'avancement">
             <text class="chart-axis-label" x="0" y="24">Non échues</text>
             <rect x="74" y="12" width="{{ (s2_non_echues * s2_scale) | round(2) }}" height="18" fill="#1565C0"></rect>
             <text class="chart-value-label" x="{{ 80 + (s2_non_echues * s2_scale) | round(2) }}" y="25">{{ s2_non_echues | round(1) | int }}</text>
 
-            <text class="chart-axis-label" x="0" y="56">En cours</text>
-            <rect x="74" y="44" width="{{ (s2_en_cours * s2_scale) | round(2) }}" height="18" fill="#7B1FA2"></rect>
-            <text class="chart-value-label" x="{{ 80 + (s2_en_cours * s2_scale) | round(2) }}" y="57">{{ s2_en_cours | round(1) | int }}</text>
+            <text class="chart-axis-label" x="0" y="56">En continue</text>
+            <rect x="74" y="44" width="{{ (s2_en_continue * s2_scale) | round(2) }}" height="18" fill="#1565C0"></rect>
+            <text class="chart-value-label" x="{{ 80 + (s2_en_continue * s2_scale) | round(2) }}" y="57">{{ s2_en_continue | round(1) | int }}</text>
 
-            <text class="chart-axis-label" x="0" y="88">Clôturé</text>
-            <rect x="74" y="76" width="{{ (s2_cloture * s2_scale) | round(2) }}" height="18" fill="#388E3C"></rect>
-            <text class="chart-value-label" x="{{ 80 + (s2_cloture * s2_scale) | round(2) }}" y="89">{{ s2_cloture | round(1) | int }}</text>
+            <text class="chart-axis-label" x="0" y="88">En cours</text>
+            <rect x="74" y="76" width="{{ (s2_en_cours * s2_scale) | round(2) }}" height="18" fill="#7B1FA2"></rect>
+            <text class="chart-value-label" x="{{ 80 + (s2_en_cours * s2_scale) | round(2) }}" y="89">{{ s2_en_cours | round(1) | int }}</text>
 
-            <text class="chart-axis-label" x="0" y="120">En retard</text>
-            <rect x="74" y="108" width="{{ (s2_en_retard * s2_scale) | round(2) }}" height="18" fill="#D32F2F"></rect>
-            <text class="chart-value-label" x="{{ 80 + (s2_en_retard * s2_scale) | round(2) }}" y="121">{{ s2_en_retard | round(1) | int }}</text>
+            <text class="chart-axis-label" x="0" y="120">Clôturé</text>
+            <rect x="74" y="108" width="{{ (s2_cloture * s2_scale) | round(2) }}" height="18" fill="#388E3C"></rect>
+            <text class="chart-value-label" x="{{ 80 + (s2_cloture * s2_scale) | round(2) }}" y="121">{{ s2_cloture | round(1) | int }}</text>
 
-            <text class="chart-axis-label" x="0" y="152">Rééchelonnée</text>
-            <rect x="74" y="140" width="{{ (s2_reechelonne * s2_scale) | round(2) }}" height="18" fill="#00796B"></rect>
-            <text class="chart-value-label" x="{{ 80 + (s2_reechelonne * s2_scale) | round(2) }}" y="153">{{ s2_reechelonne | round(1) | int }}</text>
+            <text class="chart-axis-label" x="0" y="152">En retard</text>
+            <rect x="74" y="140" width="{{ (s2_en_retard * s2_scale) | round(2) }}" height="18" fill="#D32F2F"></rect>
+            <text class="chart-value-label" x="{{ 80 + (s2_en_retard * s2_scale) | round(2) }}" y="153">{{ s2_en_retard | round(1) | int }}</text>
+
+            <text class="chart-axis-label" x="0" y="185">Rééchelonnée</text>
+            <rect x="74" y="172" width="{{ (s2_reechelonne * s2_scale) | round(2) }}" height="18" fill="#00796B"></rect>
+            <text class="chart-value-label" x="{{ 80 + (s2_reechelonne * s2_scale) | round(2) }}" y="186">{{ s2_reechelonne | round(1) | int }}</text>
         </svg>
         </div>
     </div>

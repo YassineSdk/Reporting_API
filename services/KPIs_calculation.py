@@ -1,6 +1,7 @@
 import pandas as pd 
 import numpy as numpy
 import logging
+from datetime import date
 
 
 logger = logging.getLogger(__name__)
@@ -28,6 +29,10 @@ def get_KPIs(data:pd.DataFrame)-> dict:
     RE_chart = {} # recommendation by evaluation
     AS_chart = {} # actions by status
     AE_chart = {} # actions by evaluation
+
+    # data preprocessing :
+    #-- converting date column into datetime type 
+    data['Échéance'] = pd.to_datetime(data['Échéance'],format="%Y-%m-%d")
 
     # Recommendation summary columns [Mission_id,Nb_accepté,Nb_rejeté, Nb_en etude, total_recommendation] 
     agg_dict = {
@@ -84,12 +89,16 @@ def get_KPIs(data:pd.DataFrame)-> dict:
     AE_chart = tableau_4.set_index("Evaluation")["nb_action"].to_dict()
 
 
-    # Taux de mise en œuvre des actions : T2
+    # Taux de mise en œuvre des actions : T1
     d = tableau_3.set_index("Action_status")["nb_action"].to_dict()
-    T1 = round((d["En continue"] + d["Clôturées"]) / tableau_4.iloc[:,1].sum(), 2) * 100
+    action_echues = (
+        data.loc[data["Échéance"] <= pd.Timestamp.today()]['Action_id']
+        .nunique())
+
+    T1 = round((d["En continue"] + d["Clôturées"]) / (action_echues + d["En continue"]) ,2) *100
 
 
-    # Taux de mise en œuvre des actions critiques : T3
+    # Taux de mise en œuvre des actions critiques : T2
     # ACR : Action Crtitique Realisé
     ACR = data[
         (data["Evaluation"] == "Critique") & 
@@ -99,11 +108,12 @@ def get_KPIs(data:pd.DataFrame)-> dict:
         )
         ]['Action_id'].nunique()
 
-    T2 = round(ACR / tableau_4.iloc[:,1].sum(),2) * 100
+    nb_action_critique = tableau_4.loc[tableau_4["Evaluation"] =="Critique"]['nb_action'].item()
+    T2 = round( ACR / nb_action_critique,2) * 100
     
     action_KPIs['total_actions'] = tableau_3['nb_action'].sum().item()
-    action_KPIs["T1"] = T1.item()
-    action_KPIs["T2"] = T2.item() 
+    action_KPIs["T1"] = T1
+    action_KPIs["T2"] = T2
 
 
     logger.info('Kpi calculated successfully')

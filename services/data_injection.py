@@ -57,6 +57,7 @@ def injecting_data(request_id,report_input,recommed_KPis,RE_chart, action_KPIs,A
     chart_s2_non_echues=AS_chart['Non échues'],
     chart_s2_en_cours=AS_chart['En cours'],
     chart_s2_cloture=AS_chart['Clôturées'],
+    chart_s2_en_continue=AS_chart['En continue'],
     chart_s2_en_retard=AS_chart['En retard'],
     chart_s2_reechelonne=AS_chart['Rééchelonnées'],
     chart_pie_critique=AE_chart['Critique'],
